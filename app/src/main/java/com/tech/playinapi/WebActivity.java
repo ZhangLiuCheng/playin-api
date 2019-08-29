@@ -2,8 +2,6 @@ package com.tech.playinapi;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.Window;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 
