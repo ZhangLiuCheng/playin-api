@@ -10,6 +10,16 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        release {
+            storeFile file('playin.jks')
+            storePassword 'playin'
+            keyAlias = 'playin'
+            keyPassword 'playin'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
