@@ -2,6 +2,7 @@ package com.tech.playinapi;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.ViewGroup;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
@@ -37,7 +38,8 @@ public class WebActivity extends AppCompatActivity {
     private void setupWebView(WebView webView) {
         webView.addJavascriptInterface(new PlayInterface(), "playin");
         webView.getSettings().setJavaScriptEnabled(true);
-        String url = String.format("https://webview.playinads.com/v1/index.html#/play/%s", Constants.ADID);
+        String url = String.format("https://webview.playinads.com/v1/index.html#/play/%s",
+                Constants.ADID);
         webView.loadUrl(url);
     }
 
@@ -49,15 +51,14 @@ public class WebActivity extends AppCompatActivity {
                 String type = obj.optString("type");
                 String body = obj.getString("body");
                 if ("playInCloseAction".equals(type)) {
-                    // 关闭
-                } else if ("playInInstallAction".equals(type)) {
-                    // 点击安装跳store
-                } else if ("playInTerminate".equals(type)) {
-                    // 被强制结束
-                } else if ("playInError".equals(type)) {
-                    // body 是错误信息
-                }
 
+                } else if ("playInInstallAction".equals(type)) {
+
+                } else if ("playInTerminate".equals(type)) {
+
+                } else if ("playInError".equals(type)) {
+
+                }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
